@@ -1,13 +1,15 @@
 // how many seconds in game GV
 var time = 100;
+// sets up array for score
+var score = ""
 // question and answer array (key: value) GV
 var question1 = ["blah"]
 var question2 = ["blah"] 
 var question3 = ["blah"]
 
-     qcontainer1.style.display = "none";
-     qcontainer2.style.display = "none";
-     qcontainer3.style.display = "none";
+    // qcontainer1.style.display = "none";
+    // qcontainer2.style.display = "none";
+    // qcontainer3.style.display = "none";
 // // this starts the function when clicked
 var startButton = document.querySelector("#start");
 var clock = document.querySelector("#clock");
@@ -33,12 +35,15 @@ function startQuestion() {
     qcontainer1.textContent = question1[0]
         
 }
+
 addEventListener("click",startQuestion)
 var qcontainer2 = document.querySelector("#qcontainer2");
+
 function secondQuestion() {
   qcontainer1.textContent = question1[0]
   qcontainer2.style.display = "inherit";   
 }
+
 addEventListener("click",secondQuestion)
 var qcontainer3 = document.querySelector("#qcontainer2");
 function lastQuestion() {
