@@ -13,19 +13,26 @@
         <h1>WOULD YOU LIKE TO PLAY A GAME?</h1>
     </header>
     <div class= "deco" id = "#">
-        <h3 id = "fun">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit quam veniam quibusdam natus inventore officia saepe et repellendus accusamus laborum earum repudiandae, nemo aut vel nam repellat nisi vitae facere.
+        <h3 class = "intro">
+            After you click the start button, a timer will start and you will be asked a series of multiple choice questions. If you answer a question incorrectly, time will subtracted from the clock. The game is over when all of the questions are answered or the timer reaches zero. Then you can save your intials and your score.
         </h3>
+
+        <div id = "clock"></div>
+
         <button id = "start">Start</button>
+    </div> 
+    
+    <div class = "deco" id ="qcontainer">
+          <h3>"Test Your Trivia!"</h3>
     </div>
-    </div>
-    <div class = "deco" id ="#">
-         <h3>Question Text</h3>
+
+    <div id = "results">
+        <button id = "a" class= "answer" check="true">A</button><button id = "b" class= "answer" check="false">B</button><button id = "c" class= "answer">C</button><button id = "d" class= "answer">D</button>
+
+        <!-- this div will display the test results as well -->
 
     </div>
-    <div class= "answers">
 
-    </div>
 
     <script src="script.js"></script>
 </body>

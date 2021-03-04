@@ -1,45 +1,79 @@
 // how many seconds in game GV
-var time =100;
+var time = 100;
 // question and answer array (key: value) GV
-var question =[
-    {
-      text: "Question 1",
-      options: ["True", "False"],
-      correctAnswer: "True",
-
-      text: "Question 2",
-      options: ["True", "False"],
-      correctAnswer: "True",
-
-      text: "Question 3",
-      options: ["True", "False"],
-      correctAnswer: "True",
+var myQuestions = [
+  {
+    question: "Question 1",
+    options: ["a", "b","c","d"],
+    correctAnswer: "b",
+  },{
+    question: "Question 2",
+    options: ["a", "b","c","d"],
+    correctAnswer: "c",
+  },{
+    question: "Question 3",
+    options: ["a", "b","c","d"],
+    correctAnswer: "d",
+  },
+];
+// // this starts the function when clicked
+var startButton = document.querySelector("#start");
+var clock = document.querySelector("#clock");
+startButton.addEventListener("click", function (e) {
+  startButton.style.display = "none";
+  startQuestions();
+  clock.textContent = time;
+  var clockMsg = setInterval(function () {
+    time--;
+    clock.textContent = time;
+    if (time === 0) {
+      clearInterval(clockMsg);
     }
-]
-// take things out of message as needed.
+  }, 1000);
+ }
+);
 
-// // this will populate function to display question, record answer and hide box
+var qcontainer = document.querySelector("#qcontainer");
+
+function startQuestions() {
+    qcontainer.textContent = myQuestions[0].question
+   
+}
+
+ //or add the button html dynamically here
+    // for all 4 buttons
+    // for button text for button with id a as  myQuestions[0].options[0]
+
+    //creat a new attribute for each button, with a value=
+
+var answerBtn = document.querySelector(".answer"); 
+answerBtn.addEventListener("click", function(event){
+  var element = event.target;
+
+  if (element.matches("")){
+    var state = element.getAttribute("data-state");
+    if(state ===""){
+
+    }
+
+  }
+  
+})
+// console.log(event.target.getAttribute("id")
+
+// TAKE SYNTAX OUT OF MESSAGE AS NEEDED
+
+// THIS WILL POPULATE THE FUNCTION THAT DISPLAYS QUESTION (AND MOVE THROUGH ARRAY?)
 // var questionText = document.querySelector("#questionText");
-// // this will populate the function to store answers
-// var answers = document.querySelector("#answers");
-// // this will populate the function to start and stop as answers are given 
-// var timer = document.querySelector("#timer");
 
-// var start = document.querySelector("#startPrompt");
-// //  this starts the timer
-// var startButton = document.querySelector("#start");
-// // this starts the function when clicked 
-// startButton.addEventListener("click", function(e){
-//     timer.textContent = time; 
-//     setInterval(function(){
-//      time --;
-//     //  hides start button after click. (this syntax will hide question box too)
-//      start.style.display = "none";
-//     }, 1000)
-// //   
-// //   present with a question
-//      questionText.textContent = questions[0].text;
-// //   give answers (for each loop(?) or for loop)
+// THIS WILL POPULATE THE FUNCTION THAT STORES ANSWERS
+// var answers = document.querySelector("#answers");
+
+
+
+
+
+// GIVE ANSWERS (FOR EACH LOOP?) OR FOR LOOP
 //      questions [0].answers.forEach(function(item){
 //         //  create html button
 //          var answerBtn = document.createElement("button");
@@ -50,15 +84,6 @@ var question =[
 
 //      })
 // })
-
-
-
-
-
-
-
-
-
 
 // GIVEN I am taking a code quiz
 // WHEN I click the start button

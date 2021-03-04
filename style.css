@@ -1,7 +1,7 @@
 body{
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     text-align: center;
-     background-color: rgb(0, 153, 255);
+    
     
 
 }
@@ -11,19 +11,23 @@ header{
 }
 div{
     text-align: center;
-    border-style: solid;
-    border-radius: 10px;
     margin-left: 100px;
     margin-right: 100px;
-    
-   
-
 }
 
 #timer{
     position:fixed
     
 }
-.fun{
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+#start{
+    margin:30px;
+}
+.answer{
+    margin:30px;
+    
+}
+#qcontainer{
+    border: 2px solid black;
+    border-radius: 10px;
 }
