@@ -1,15 +1,20 @@
 // how many seconds in game GV
 var time = 100;
 // sets up array for score
-var score = ""
+var tally = ""
 // question and answer array (key: value) GV
 var question1 = ["blah"]
 var question2 = ["blah"] 
 var question3 = ["blah"]
 
-    // qcontainer1.style.display = "none";
-    // qcontainer2.style.display = "none";
-    // qcontainer3.style.display = "none";
+// HIDEs QCONTAINERS AT OPEN SCREEN
+   var openScreen = document.querySelector("body")
+    openScreen.addEventListener("", function(){
+    qcontainer1.style.display = "none";
+    qcontainer2.style.display = "none";
+    qcontainer3.style.display = "none";
+})
+
 // // this starts the function when clicked
 var startButton = document.querySelector("#start");
 var clock = document.querySelector("#clock");
@@ -29,25 +34,26 @@ startButton.addEventListener("click", function (e) {
  }
 );
 
-
+// FUNCTIONS BELOW MOVE FROM ONE TO ANOTHER DISPLAYING QCONTAINERS IN SEQUENCE
 var qcontainer1 = document.querySelector("#qcontainer1");
-function startQuestion() {
+startQuestion.addEventListener("click",function(e) {
     qcontainer1.textContent = question1[0]
-        
-}
+    secondQuestion()    
+    e.target.getAttribute("class")
+})
 
 addEventListener("click",startQuestion)
 var qcontainer2 = document.querySelector("#qcontainer2");
 
 function secondQuestion() {
-  qcontainer1.textContent = question1[0]
+  qcontainer1.textContent = question2[0]
   qcontainer2.style.display = "inherit";   
 }
 
 addEventListener("click",secondQuestion)
 var qcontainer3 = document.querySelector("#qcontainer2");
 function lastQuestion() {
-  qcontainer1.textContent = question1[0]
+  qcontainer1.textContent = question3[0]
   qcontainer3.style.display = "inherit";     
 }
 
