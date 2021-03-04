@@ -27,7 +27,23 @@ div{
     margin:30px;
     
 }
-#qcontainer{
-    border: 2px solid black;
-    border-radius: 10px;
+.deco{
+    margin-left: 20%;
+    margin-right: 20%;
+    
 }
+
+#qcontainer2{
+    text-align: center;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+#qcontainer3{
+    text-align: center;
+    margin-left: 100px;
+    margin-right: 100px;
+    
+}
+
+
+

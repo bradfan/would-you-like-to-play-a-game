@@ -1,27 +1,21 @@
 // how many seconds in game GV
 var time = 100;
 // question and answer array (key: value) GV
-var myQuestions = [
-  {
-    question: "Question 1",
-    options: ["a", "b","c","d"],
-    correctAnswer: "b",
-  },{
-    question: "Question 2",
-    options: ["a", "b","c","d"],
-    correctAnswer: "c",
-  },{
-    question: "Question 3",
-    options: ["a", "b","c","d"],
-    correctAnswer: "d",
-  },
-];
+var question1 = ["blah"]
+var question2 = ["blah"] 
+var question3 = ["blah"]
+
+     qcontainer1.style.display = "none";
+     qcontainer2.style.display = "none";
+     qcontainer3.style.display = "none";
 // // this starts the function when clicked
 var startButton = document.querySelector("#start");
 var clock = document.querySelector("#clock");
 startButton.addEventListener("click", function (e) {
-  startButton.style.display = "none";
-  startQuestions();
+  startQuestion();
+  would.style.display ="none";
+  words.style.display = "none";
+  qcontainer1.style.display = "inherit"
   clock.textContent = time;
   var clockMsg = setInterval(function () {
     time--;
@@ -33,38 +27,53 @@ startButton.addEventListener("click", function (e) {
  }
 );
 
-var qcontainer = document.querySelector("#qcontainer");
 
-function startQuestions() {
-    qcontainer.textContent = myQuestions[0].question
-   
+var qcontainer1 = document.querySelector("#qcontainer1");
+function startQuestion() {
+    qcontainer1.textContent = question1[0]
+        
+}
+addEventListener("click",startQuestion)
+var qcontainer2 = document.querySelector("#qcontainer2");
+function secondQuestion() {
+  qcontainer1.textContent = question1[0]
+  qcontainer2.style.display = "inherit";   
+}
+addEventListener("click",secondQuestion)
+var qcontainer3 = document.querySelector("#qcontainer2");
+function lastQuestion() {
+  qcontainer1.textContent = question1[0]
+  qcontainer3.style.display = "inherit";     
 }
 
- //or add the button html dynamically here
+
+    //or add the button html dynamically here
     // for all 4 buttons
     // for button text for button with id a as  myQuestions[0].options[0]
+    //  var btna = document.createElement("");
+    // .type = "";
+    // btna.innerText = "A"
+    // document.qcontainer1.appendChild(btna);
+    
 
-    //creat a new attribute for each button, with a value=
+// var answerBtn = document.querySelector(".answer"); 
+// answerBtn.addEventListener("click", function(event){
+//   var element = event.target;
 
-var answerBtn = document.querySelector(".answer"); 
-answerBtn.addEventListener("click", function(event){
-  var element = event.target;
+//   if (element.matches("")){
+//     var state = element.getAttribute("data-state");
+//     if(state ===""){
 
-  if (element.matches("")){
-    var state = element.getAttribute("data-state");
-    if(state ===""){
+//     }
 
-    }
-
-  }
+//   }
   
-})
+// })
 // console.log(event.target.getAttribute("id")
 
 // TAKE SYNTAX OUT OF MESSAGE AS NEEDED
 
-// THIS WILL POPULATE THE FUNCTION THAT DISPLAYS QUESTION (AND MOVE THROUGH ARRAY?)
-// var questionText = document.querySelector("#questionText");
+
 
 // THIS WILL POPULATE THE FUNCTION THAT STORES ANSWERS
 // var answers = document.querySelector("#answers");
