@@ -12,48 +12,60 @@ var time = 100;
 var tally = "";
 // question and answer array (key: value) GV
 var question1 = "Who is the inventor of JavaScript?";
-var question2 = "blah";
-var question3 = "blah";
-window.addEventListener("load", function (event) {
+var question2 = "When was Javascript invented?";
+var question3 = "Typically, JavaScript provides web pages with which of the following?";
+window.addEventListener("load", function () {
   qcontainer1.style.display = "none";
   qcontainer2.style.display = "none";
   qcontainer3.style.display = "none";
 });
 startButton.addEventListener("click", function (event) {
+  // if (condition) {
+    
+  // }
   startButton.style.display = "none";
   would.style.display = "none";
   words.style.display = "none";
   document.querySelector("#questiontext1").textContent = question1;
   qcontainer1.style.display ="block"
   event.target.getAttribute("id")
-   clock.textContent = time;
+  clock.textContent = time;
   var clockMsg = setInterval(function () {
     time--;
     clock.textContent = time;
     if (time === 0) {
       clearInterval(clockMsg);
     }
-  }, 1000);
-  console.log(event.target.getAttribute("id"))
-
+  }, 1000); 
 });
+document.querySelector("#a","#b","#c")
+document.addEventListener("click",function(){
+  if ("#a" ||"#b"||"#c") {
+    qcontainer1.style.display = "none";
+    // qcontainer2.style.display = "block";
+  }
+  })
+  //  console.log(getAttribute("id"))
+  // console.log(tally.length)
+
+
 // FUNCTIONS BELOW MOVE FROM ONE TO ANOTHER DISPLAYING QCONTAINERS IN SEQUENCE
 // NEEDS EVENTLISTENER
-  function secondQuestion(event) {
-  event.target.getAttribute("id")
-  qcontainer1.style.display = "none";
-  qcontainer2.textContent = question2;
-  qcontainer2.style.display = "block";
-  // document.querySelector("#questiontext2").textContent = question2;
-  console.log(event.target.getAttribute("id"))
-}
-// NEEDS EVENTLISTENER
-function lastQuestion() {
-  qcontainer1.textContent = question3;
-  qcontainer3.style.display = "block";
-  document.querySelector("#questiontext1").textContent = question1;
+//   function secondQuestion(event) {
+//   event.target.getAttribute("id")
+  
+//   qcontainer2.textContent = question2;
+  
+//   // document.querySelector("#questiontext2").textContent = question2;
+//   console.log(event.target.getAttribute("id"))
+// }
+// // NEEDS EVENTLISTENER
+// function lastQuestion() {
+//   qcontainer1.textContent = question3;
+//   qcontainer3.style.display = "block";
+//   document.querySelector("#questiontext1").textContent = question1;
 
-}
+// }
 //or add the button html dynamically here
 // for all 4 buttons
 // for button text for button with id a as  myQuestions[0].options[0]
