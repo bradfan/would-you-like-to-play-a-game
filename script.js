@@ -7,13 +7,18 @@ var qcontainer1 = document.querySelector("#qcontainer1");
 var qcontainer2 = document.querySelector("#qcontainer2");
 var qcontainer3 = document.querySelector("#qcontainer3");
 // how many seconds in game GV
-var time = 100;
-// sets up array for score
+var time = 20;
+// sets up array for total score
 var tally = "";
+// sets up area for end time
+var endTime = ""; 
 // question and answer array (key: value) GV
 var question1 = "Who is the inventor of JavaScript?";
+var answer1 = "";
 var question2 = "When was Javascript invented?";
+var answer2 = "";
 var question3 = "Typically, JavaScript provides web pages with which of the following?";
+var answer3 = ".";
 window.addEventListener("load", function () {
   qcontainer1.style.display = "none";
   qcontainer2.style.display = "none";
@@ -37,65 +42,53 @@ startButton.addEventListener("click", function (event) {
   }, 1000); 
 });
 // FUNCTIONS BELOW MOVE FROM ONE TO ANOTHER DISPLAYING QCONTAINERS IN SEQUENCE
-qcontainer1.addEventListener("click",function(){
+qcontainer1.addEventListener("click",function(event){
     questiontext2.textContent = question2
     qcontainer1.style.display = "none";
     qcontainer2.style.display = "block";
+    var element = event.target;
+    if (element.matches(".correct")) {
+      console.log(element)
+      
+    } return answer1 
     
-  })// console.log(getelementById("f"))
-  // console.log(tally.length)
-// // event.target.getElementById("f")
     
-qcontainer2.addEventListener("click",function(){
+  }) 
+ 
+  qcontainer2.addEventListener("click",function(event){
   questiontext3.textContent = question3
   qcontainer2.style.display = "none";
   qcontainer3.style.display = "block";
+  var element = event.target;
+    if (element.matches(".correct")) {
+      console.log(element)
+      
+    } return answer2
   
 })
-
-qcontainer3.addEventListener("click",function(){
+  qcontainer3.addEventListener("click",function(event){
   qcontainer3.style.display = "none";
-  score.style.display = "block";
-    
+   
+  end.style.display = "GAME OVER!";
+  
+  
+  var element = event.target;
+    if (element.matches(".correct")) {
+      console.log(element)
+      
+    } return answer3   
 })
-  
+var final=function(){
+  if (answer1===true) {
+    tally += (answer1)
+  }
+  if (answer2===true) {
+    tally += (answer2)
+  }
+  if (answer3===true) {
+    tally += (answer3)
+    console.log(tally.length)
+  } return (arr.length) 
+}  
 
-  
-
-//   var element = event.target;
-//   if (element.matches("")){
-//     var state = element.getAttribute("data-state");
-//     if(state ===""){
-//     }
-//   }
-// })
-// console.log(event.target.getAttribute("id"))
-
-
-// TAKE SYNTAX OUT OF MESSAGE AS NEEDED
-// THIS WILL POPULATE THE FUNCTION THAT STORES ANSWERS
-
-
-// var answers = document.querySelector("#answers");
-// GIVE ANSWERS (FOR EACH LOOP?) OR FOR LOOP
-//      questions [0].answers.forEach(function(item){
-//         //  create html button
-//          var answerBtn = document.createElement("button");
-//         //  set the text of that button to be current item
-//          answer.textContent = item;
-//         //  append it to our options div
-//          options.append(answerBtn);
-//      })
-// })
-// GIVEN I am taking a code quiz
-// WHEN I click the start button
-// THEN a timer starts and I am presented with a question
-// WHEN I answer a question
-// THEN I am presented with another question
-// WHEN I answer a question incorrectly
-// THEN time is subtracted from the clock
-// WHEN all questions are answered or the timer reaches 0
-// THEN the game is over
-// WHEN the game is over
-// THEN I can save my initials and my score
 
