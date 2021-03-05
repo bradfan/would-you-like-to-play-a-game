@@ -18,11 +18,9 @@ window.addEventListener("load", function () {
   qcontainer1.style.display = "none";
   qcontainer2.style.display = "none";
   qcontainer3.style.display = "none";
+  score.style.display = "none";
 });
 startButton.addEventListener("click", function (event) {
-  // if (condition) {
-    
-  // }
   startButton.style.display = "none";
   would.style.display = "none";
   words.style.display = "none";
@@ -38,43 +36,32 @@ startButton.addEventListener("click", function (event) {
     }
   }, 1000); 
 });
-document.querySelector("#a","#b","#c")
-document.addEventListener("click",function(){
-  if ("#a" ||"#b"||"#c") {
-    qcontainer1.style.display = "none";
-    // qcontainer2.style.display = "block";
-  }
-  })
-  //  console.log(getAttribute("id"))
-  // console.log(tally.length)
-
-
 // FUNCTIONS BELOW MOVE FROM ONE TO ANOTHER DISPLAYING QCONTAINERS IN SEQUENCE
-// NEEDS EVENTLISTENER
-//   function secondQuestion(event) {
-//   event.target.getAttribute("id")
+qcontainer1.addEventListener("click",function(){
+    questiontext2.textContent = question2
+    qcontainer1.style.display = "none";
+    qcontainer2.style.display = "block";
+    
+  })// console.log(getelementById("f"))
+  // console.log(tally.length)
+// // event.target.getElementById("f")
+    
+qcontainer2.addEventListener("click",function(){
+  questiontext3.textContent = question3
+  qcontainer2.style.display = "none";
+  qcontainer3.style.display = "block";
   
-//   qcontainer2.textContent = question2;
-  
-//   // document.querySelector("#questiontext2").textContent = question2;
-//   console.log(event.target.getAttribute("id"))
-// }
-// // NEEDS EVENTLISTENER
-// function lastQuestion() {
-//   qcontainer1.textContent = question3;
-//   qcontainer3.style.display = "block";
-//   document.querySelector("#questiontext1").textContent = question1;
+})
 
-// }
-//or add the button html dynamically here
-// for all 4 buttons
-// for button text for button with id a as  myQuestions[0].options[0]
-//  var btna = document.createElement("");
-// .type = "";
-// btna.innerText = "A"
-// document.qcontainer1.appendChild(btna);
-// var answerBtn = document.querySelector(".answer");
-// answerBtn.addEventListener("click", function(event){
+qcontainer3.addEventListener("click",function(){
+  qcontainer3.style.display = "none";
+  score.style.display = "block";
+    
+})
+  
+
+  
+
 //   var element = event.target;
 //   if (element.matches("")){
 //     var state = element.getAttribute("data-state");
@@ -83,8 +70,12 @@ document.addEventListener("click",function(){
 //   }
 // })
 // console.log(event.target.getAttribute("id"))
+
+
 // TAKE SYNTAX OUT OF MESSAGE AS NEEDED
 // THIS WILL POPULATE THE FUNCTION THAT STORES ANSWERS
+
+
 // var answers = document.querySelector("#answers");
 // GIVE ANSWERS (FOR EACH LOOP?) OR FOR LOOP
 //      questions [0].answers.forEach(function(item){
